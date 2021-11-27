@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+
+    <title>Kenya Farmers</title>
+
+    {% if title %}
+    <title>Kenya Farmers - {{title}} </title>
+    {% else %}
+    <title>Kenya Farmers ShopIt</title>
+    {% endif %}
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+          <a href="{% url 'index' %}" class="navbar-brand">Kenya Farmers Association</a>
+          <a href="/contact" class="navbar-brand">Contact</a>
+          <a href="/about" class="navbar-brand">About</a>
+          <a href="/services" class="navbar-brand">Services</a>
+  
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navmenu"
+          >
+          <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a href="{% url 'download' %}" class="nav-link">Download Report</a>
+              </li>
+              <li class="nav-item">
+                <a href="#learn" class="nav-link">Sell</a>
+              </li>
+              <li class="nav-item">
+                <a href="/login" class="nav-link">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'show_cart' %}" class="nav-link"><i class="fa fa-shopping-cart"></i> {{ cart_item_count }}<span class="badge badge-light">{{ cart_item_count }}</span></a>
+              </li>
+
+              <!-- <a class="btn btn-success btn-sm ml-3" href="{% url 'show_cart' %}">
+                <i class="fa fa-shopping-cart"></i> Cart
+                <span class="badge badge-light">{{ cart_item_count }}</span>
+            </a> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br>
+      <br>
+
+      <div class="showcase mt-5 container-md">
+        {% block content %} {% endblock content %}
+      </div>
+  
+
+    
+</body>
+</html>

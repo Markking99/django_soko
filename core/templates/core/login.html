@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="mt-5">
+    <h1>Hey There Kenya Farmers Association</h1>
+
+    <form method="POST">
+
+      {% csrf_token %} 
+      {{form.as_p}}
+      <button class="btn" style="background-color:aqua" type="Submit"><strong>Login</strong></button>
+    </form>
+  
+    
+    If you don't  already have an account , <a href="/register"><strong>Register</strong></a>
+</div>
+{% endblock content %} 

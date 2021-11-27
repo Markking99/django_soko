@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  </style>
+<div class="mt-5">
+    <h1>Hey There Kenya Farmers Association</h1>
+
+    <h5 class="card-title"></h5><h2><b>Welcome</b></h2>
+        <p> Farmers are the heart of Unganisha's operation .The founders of Unganisha made it with an aim of esuring fresh produce from farmers gets to consumers in its right state and at the correct price<br>
+         Due to the current structure which leaves farmers with losses due to middlemen , Unganisha was created to give farmers full control of their hardwork<br>
+         and to ensure they get profit . Consumers have also been getting products from unknown suppliers who cannot e trusted , Unganish helps to ensure the <br>
+         source is known and can be trusted.
+       </p>
+           
+</div>
+
+<hr>
+<div class="row">
+  <div class="column"><div class="text-center">AGRICULTURAL PRODUCTS FROM FARMERS
+    <a href="/login">  
+      <button style="height:80px; width:80px">View Agricultural Products</button>  
+    </a>
+  </div></div>
+  <div class="column"><div class="text-center">KFA PRODUCTS
+    <a href="/kfa">  
+      <button style="height:80px; width:80px">View Agricultural Products</button>  
+    </a>
+  </div></div>
+</div>
+ 
+
+
+<hr>
+{% endblock content %}
+
